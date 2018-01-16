@@ -38,23 +38,14 @@ sys.stderr.write("Reading in columns %s\n" % cols_path)
 cols = read_list(cols_path)
 sys.stderr.write("%d columns\n" % len(cols))
 
-#print D
-#print rows
-#print cols
-
-
 sys.stderr.write("Determining subset matrix\n")
 E = {}
 
 for r in rows:
-  #print r
   E[r] = {}
   for c in cols:
-    #print "  ", c
     E[r][c] = D[r][c]
-    #print D[r][c]
 
-#print_matrix(E)  # This does not preserve row/col order
 sys.stderr.write("Writing out result\n")
 for c in cols:
   sys.stdout.write("\t%s" % c)
