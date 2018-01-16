@@ -437,3 +437,24 @@ def get_ec_desc(path):
 
 
 
+###################
+# GENERAL FUNCTIONS
+# FOR THIS AND THAT
+###################
+
+# Do the intervals overlap at all?
+def overlaps(M, N):
+  a, b = M
+  c, d = N
+  return (min(a,b) <= c or min(a,b) <= d) and (max(a,b) >= c or max(a,b) >= d)
+
+def contains(M, N):
+  a, b = M
+  c, d = N
+  return (min(a,b) <= min(c,d)) and (max(a,b) >= max(c,d)) 
+
+def is_contained_in(M, N):
+  a, b = M
+  c, d = N
+  return (min(a,b) >= min(c,d)) and (max(a,b) <= max(c,d)) 
+
